@@ -3,6 +3,7 @@ title: "Report Cylistic Case Study"
 author: "Minh Duc"
 date: "2026-01-08"
 format: html
+output-file: index.html
 ---
 
 # ASK
