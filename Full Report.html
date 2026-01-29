@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Minh Duc">
+<meta name="dcterms.date" content="2026-01-08">
+
+<title>Report Cylistic Case Study</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Full Report_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Full Report_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Full Report_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Full Report_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="Full Report_files/libs/quarto-html/popper.min.js"></script>
+<script src="Full Report_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Full Report_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Full Report_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Full Report_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Full Report_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Full Report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Full Report_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Report Cylistic Case Study</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Minh Duc </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 8, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="ask" class="level1">
+<h1>ASK</h1>
+<section id="the-business-task" class="level2">
+<h2 class="anchored" data-anchor-id="the-business-task">The business task</h2>
+<p>The company want to increase the amount of casual riders who buy the membership. Firstly, they want to know what the differences between casual riders and annual ones. I have to check for these things:</p>
+<ul>
+<li>Identify the differences between theese two types of membership</li>
+<li>Examine wether they’re correlations or causations</li>
+<li>Explore why there are those differences</li>
+<li>Predict on what might change if any of the differences changes</li>
+</ul>
+</section>
+<section id="key-stakeholders" class="level2">
+<h2 class="anchored" data-anchor-id="key-stakeholders">Key stakeholders</h2>
+<ul>
+<li>Me a.k.a the man who carry 1/3 of the sky :))</li>
+<li>Monero: My boss :)) who will decide what to do with the marketing campaign</li>
+<li>Marketing and analytics team: My team who will support me with other phases in the analysis or help me to completing mine.</li>
+<li>Executive team: Boss of the boss, will decide to approve the recommendation</li>
+</ul>
+</section>
+<section id="deliverables" class="level2">
+<h2 class="anchored" data-anchor-id="deliverables">Deliverables</h2>
+<ul>
+<li><p>Examine the key differences between these two types of customers, what differences might lead them to sign up for annual passes, base on data in most recent year, which will be possible for the marketing team to set up campaigns.</p></li>
+<li><p>Seeing the differences between casual riders and annual members might reveal the reason between customer’s decisions, or the changes in their mind. So that the company can plan for campaigns which will bring more customers with the same conditions or encourage currently customers and transform them to potential customers who are ready to buy memberships.</p></li>
+</ul>
+</section>
+</section>
+<section id="prepare" class="level1">
+<h1>PREPARE</h1>
+<section id="download-the-data-and-store-approriately" class="level2">
+<h2 class="anchored" data-anchor-id="download-the-data-and-store-approriately">Download the data and store approriately</h2>
+<ul>
+<li>The data is located in the database of the company, with 2 tables required for analyzing. I stored them in the dataset file in the computer so that I can easily manage the files.</li>
+<li>The size of the files are quite big (50-70MB), this is one of the three tasks that I and my team have to collaborate to complete, I will upload it to Big Query and use SQL to clean and transform the data first.</li>
+</ul>
+</section>
+<section id="identify-how-the-data-is-organized" class="level2">
+<h2 class="anchored" data-anchor-id="identify-how-the-data-is-organized">Identify how the data is organized</h2>
+<ul>
+<li>The data is stored in tabular format with each row is a sample of a trip ride. Depends on the version, there are a little bit difference between them.</li>
+<li>For 2019 file, it contains information of identity (trip_id, bikeid, from_station_id, to_station_id), general information of the trip (start_time, end_time, from_station_name, to_station_name) and information about the user (usertype, gender, birthyear)</li>
+<li>With 2020 file, the data got more information about the ride (rideable_type, start_lat, start_lng, end_lat, end_lng). However, it doesn’t have more information about users. There might be some conclusions which said these variables don’t have value for further analytics for improve the business.</li>
+</ul>
+</section>
+<section id="sort-and-filter-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="sort-and-filter-the-data">Sort and filter the data</h2>
+<ul>
+<li>With 2019 data
+<ul>
+<li>First, I will sort the data by several variables to check if there is any outlier in the tripduration and birthyear.</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  tripduration,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  start_time,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  end_time</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  `mindful<span class="op">-</span>girder<span class="op">-</span><span class="fl">420702.</span>cyclist_case_study.trip_info_2019`</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> tripduration <span class="kw">DESC</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>Then, I’m gonna check for the missing value in the id, station name and usertype, birthyear and gender columns.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span>  # <span class="kw">Check</span> <span class="cf">for</span> <span class="kw">id</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> missing <span class="fu">value</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  `mindful<span class="op">-</span>girder<span class="op">-</span><span class="fl">420702.</span>cyclist_case_study.trip_info_2019`</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  (</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>      countif(miss_id <span class="kw">IS</span> <span class="kw">NULL</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>      UNNEST([trip_id, bikeid, from_station_id, to_station_id]) <span class="kw">AS</span> miss_id</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="op">&gt;</span> <span class="dv">0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>Next, I’m gonna check if there is any issues in logic like the id number is negative or start time is later than end_time.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  countif(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    bikeid <span class="op">&lt;=</span> <span class="dv">0</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">OR</span> tripduration <span class="op">&lt;=</span> <span class="dv">0</span>) <span class="kw">AS</span> constraint_violation,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  countif(</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    start_time <span class="op">&gt;</span> end_time</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">OR</span> tripduration <span class="op">&lt;&gt;</span> timestamp_diff(end_time, start_time, <span class="dt">second</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">OR</span> birthyear <span class="op">&lt;</span> <span class="dv">1925</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">OR</span> birthyear <span class="op">&gt;</span> <span class="dv">2019</span>) <span class="kw">AS</span> logical_issues</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  `mindful<span class="op">-</span>girder<span class="op">-</span><span class="fl">420702.</span>cyclist_case_study.trip_info_2019`</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>Finally, I’m gonna check for duplicate data base on the characteristic of datatype, the trip_id must be unique</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  trip_id,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> num_of_dup</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  `mindful<span class="op">-</span>girder<span class="op">-</span><span class="fl">420702.</span>cyclist_case_study.trip_info_2019`</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> trip_id</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="op">&gt;</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>With the 2020 information, the steps is quite similar, however, there are also a little difference</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  timestamp_diff(ended_at, started_at, <span class="kw">minute</span>) <span class="kw">AS</span> trip_duration_minutes</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  `mindful<span class="op">-</span>girder<span class="op">-</span><span class="fl">420702.</span>cyclist_case_study.trip_info_2020`</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> trip_duration_minutes <span class="kw">DESC</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  countif(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    timestamp_diff(ended_at, started_at, <span class="kw">minute</span>) <span class="op">&lt;</span> <span class="dv">2</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> start_station_name <span class="op">=</span> end_station_name) <span class="kw">AS</span> num_of_outliers</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  `mindful<span class="op">-</span>girder<span class="op">-</span><span class="fl">420702.</span>cyclist_case_study.trip_info_2020`</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="determine-the-credibility-of-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="determine-the-credibility-of-the-data">Determine the credibility of the data</h2>
+<ul>
+<li>I examine the integrity of the data by querying follow principles, such as:
+<ul>
+<li>missing value</li>
+<li>duplicate data</li>
+<li>inconsistent data</li>
+<li>outlier</li>
+<li>noise</li>
+</ul></li>
+</ul>
+<p>Step by step, I’ve spotted a couples of point that I may have put attention on when I move to the next phase.</p>
+<ul>
+<li><p>With the 2019 information:</p>
+<ul>
+<li>I have noticed that 7 of the customer rent the bike for more than 1 months, maximum for 4 months.</li>
+<li>836 samples said that the customers rented the bike for no more than 3 minutes and they returned it back the the station then.</li>
+<li>171 rides belong to the customers who are older than 98 years old.</li>
+<li>19712 samples with missing value in gender or birthyear column</li>
+<li>24 samples where tripduration is not equal to calculation base on start_date and end_date.</li>
+</ul></li>
+<li><p>With 2020 information It don’t contain gender and birthyear column, so no need to check for it. However, they have latitude and longitude information, so that I’m gonna check if these data are valid. So that for the similar steps like the latest table, I have spotted these things:</p>
+<ul>
+<li>21 trips have the duration of using bike more than 1 months.</li>
+<li>8481 trips have the duration shorter than 3 minutes and returned the bike at the same station.</li>
+<li>8206 trips have the same condition with 2 minutes</li>
+<li>157EAA4C4A3C8D36 ID have no information about end_station_id, name, latitude and longitude</li>
+<li>117 samples which has start time later than end time Spotting on outlier, or unusual points of the data can help me determine whether eliminate the false points to increase the accuracy of the analysis. Or maybe the outlier will open a footprint to a more valuable insight. During the prepare phase, I also make sure that my methods and tools are comply with licensing terms. For example, I’m gonna check if the data is opened, restricted share.etc. If there are any ambiguity, I’m gonna announced to the data owner instead of assuming the allowance.</li>
+</ul></li>
+</ul>
+</section>
+<section id="deliverables-1" class="level2">
+<h2 class="anchored" data-anchor-id="deliverables-1">Deliverables</h2>
+<ul>
+<li>Name: Cyclistic Bike-Share</li>
+<li>Provider: Cyclistic Co.ltd</li>
+<li>Description: The dataset contain records of individual trips made my customers from 2019 to 2020. Each record contains information about identities of related objects, information of the trip such as trip duration, station’s name and side information of the customers</li>
+<li>Time period: 2 tables with each table contains the records of 1 year from 2019 to 2020</li>
+<li>Key variables:
+<ul>
+<li>trip_id, ride_id: unique key for each record</li>
+<li>bike_id, from_station_id, to_station_id: unique identity for bikes and stations</li>
+<li>start_station_name, end_station_name: station where each trip starts and ends</li>
+<li>tripduration: duration of the trips in seconds</li>
+</ul></li>
+<li>Limitation and note:
+<ul>
+<li>The dataset mostly includes data of the trip rather than demographic data of the customers.</li>
+<li>Minor of the trips have too short or too long duration, or invalid start time and end time, the age of some of the customers are too great</li>
+<li>The data credibility is rely on the accuracy of the sensors and available stored information of the users.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="process" class="level1">
+<h1>PROCESS</h1>
+<section id="check-the-data-for-errors" class="level2">
+<h2 class="anchored" data-anchor-id="check-the-data-for-errors">Check the Data for errors:</h2>
+<p>The error have been checked in the prepare phase. In this phase, it is important to see which of the errors are worth to be kept or to be eliminated.</p>
+</section>
+<section id="choose-the-tools" class="level2">
+<h2 class="anchored" data-anchor-id="choose-the-tools">Choose the tools:</h2>
+<ul>
+<li>Because the requirement of tracking my work and the big size of the data (50-70MB), I would like to use SQL for processing the data because it works faster and I can track on my process with code files.</li>
+<li>In parallel with that, I would like to use R to check more for the distribution of the data and create different versions of the data to see whether they bring different results or not.</li>
+</ul>
+</section>
+<section id="transform-the-data-so-i-can-work-with-it-effectively" class="level2">
+<h2 class="anchored" data-anchor-id="transform-the-data-so-i-can-work-with-it-effectively">Transform the data so I can work with it effectively</h2>
+<p>(More details in next task)</p>
+</section>
+<section id="document-the-cleaning-process" class="level2">
+<h2 class="anchored" data-anchor-id="document-the-cleaning-process">Document the cleaning process</h2>
+<ul>
+<li><p>Because both of the table have different schema, so I would like to process each table one by one and won’t combine them immediately to avoid further bias.</p></li>
+<li><p>2019 trip info</p>
+<ul>
+<li>24 records has the tripduration is different from time mark, I dive a little bit deeper and see that 15 of them have the deviations more then 1 minutes. Then I decide to fix the data by replace the tripduration with time_end - time_start.</li>
+<li>Some of the record said that the trip duration is too long or too short. However, short time maybe for testing and long time is really long trip. I will keep these data for further analyze.</li>
+<li>171 records with customers older than 98 years old will be kept also because I need more validation in the future.</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">*</span> <span class="kw">EXCEPT</span> (tripduration),</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  timestamp_diff(end_time, start_time, <span class="kw">minute</span>) <span class="kw">AS</span> tripduration</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  `mindful<span class="op">-</span>girder<span class="op">-</span><span class="fl">420702.</span>cyclist_case_study.trip_info_2019`</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>After dowloaded the data and change the name of the file, I rename the columns in order to sync with 2020 data for more convinient analysis</li>
+<li>I then realize that the task to sync variables between dataset must have done in the prepare phases.</li>
+</ul>
+<ul>
+<li>Then, I notice that there’re demographic data in the 2019 data and these demographic information have null value. I decided to perform 2 analytical populations, one is analysis is based on trip information, another one is the demographic.</li>
+</ul>
+<ul>
+<li>2020 trip info
+<ul>
+<li>The same stuff with suspicious points will be kept</li>
+<li>The record which has no destination information will be deleted</li>
+<li>Records which have start time later than end time will also be deleted too.</li>
+<li>Add a trip_duration column to the tables</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">*</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  TIMESTAMP_DIFF(ended_at, started_at, <span class="dt">second</span>) <span class="kw">as</span> duration</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  `mindful<span class="op">-</span>girder<span class="op">-</span><span class="fl">420702.</span>cyclist_case_study.trip_info_2020`</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  started_at <span class="op">&lt;</span> ended_at</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> end_station_id <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>I will rename the columns before further filter. In parallel with that, I notice that the rideable column has only single unique value “docked_bike”, I decide to exclude it from analysis as it provides no varience.</li>
+</ul>
+<ul>
+<li>Base on business questions and available variables, I will combine and extract them to create new variables, they are:
+<ul>
+<li>route_id: combine from <code>from_station_id</code> and <code>to_station_id</code></li>
+<li>duration_sec: extract from <code>start_time</code> and <code>end_time</code></li>
+<li>duration_min: exchange from <code>duration_sec</code></li>
+<li>weekday: extract from <code>start_time</code></li>
+<li>is_weekend: to validate if there are any different behavior in the weekend, extract from <code>weekday</code></li>
+<li>round_trip: to see different insights of people who start and end the ride at the same place, check with the <code>start_station_id</code> and <code>end_station_id</code></li>
+<li>age: Besides, with the demographic data in 2019, I will add an age column extract from <code>birth</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="deliverables-2" class="level2">
+<h2 class="anchored" data-anchor-id="deliverables-2">Deliverables</h2>
+<p>Because the 2019 and 2020 datasets have different schemas, each dataset was processed independently during the data cleaning phase. The datasets were not combined at this stage in order to avoid introducing structural bias or premature assumptions.</p>
+<p><strong>2019 Trip Data:</strong></p>
+<p>Several data quality issues were identified and addressed:</p>
+<ul>
+<li><p>A total of 24 records were found where the reported <code>tripduration</code> did not match the difference between the recorded start and end timestamps.</p>
+<ul>
+<li>Among these, 15 records showed deviations greater than one minute.</li>
+<li>For consistency and accuracy, <code>tripduration</code> in these records was recalculated using the difference between end time and start time.</li>
+</ul></li>
+<li><p>Records with unusually short or long trip durations were reviewed.</p>
+<ul>
+<li>Short-duration trips may represent testing behavior.</li>
+<li>Long-duration trips may represent legitimate extended usage.</li>
+<li>These records were retained for further analysis rather than removed at this stage.</li>
+</ul></li>
+<li><p>171 records indicated users with an age greater than 98 years.</p>
+<ul>
+<li>These records were retained, as additional validation is required before determining whether they represent data errors or edge cases.</li>
+</ul></li>
+<li><p>After downloading and renaming the raw data files, column names were standardized to align with the 2020 dataset for future integration.</p></li>
+<li><p>Demographic variables present in the 2019 dataset contained missing values.</p>
+<ul>
+<li>As a result, two analytical populations were defined:
+<ul>
+<li>Trip-based analysis using all valid trip records.</li>
+<li>Demographic analysis using only records with non-missing demographic information.</li>
+</ul></li>
+</ul>
+<p><strong>2020 Trip Data:</strong></p></li>
+</ul>
+<p>The 2020 dataset underwent a similar but independent cleaning process:</p>
+<ul>
+<li>Records with suspicious values were retained for consistency with the 2019 analysis.</li>
+<li>Records missing destination information were removed, as they could not support complete trip analysis.</li>
+<li>Records where the start time occurred later than the end time were removed due to logical inconsistency.</li>
+<li>A <code>trip_duration</code> column was created based on start and end timestamps.</li>
+<li>Column names were standardized prior to further filtering.
+<ul>
+<li>During this step, it was observed that the <code>rideable_type</code> column contained only a single unique value (<code>"docked_bike"</code>).</li>
+<li>This column was removed from analysis due to the absence of variance.</li>
+</ul>
+<strong>In General</strong> I will put some more related columns base on existed variables as a part of formatting the data for analyze phase.</li>
+</ul>
+</section>
+</section>
+<section id="analyze" class="level1">
+<h1>ANALYZE</h1>
+<section id="setting-up-hypothesis" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-hypothesis">Setting up Hypothesis</h2>
+<ul>
+<li><p>Start with the question at first “What are the differences between member and casual user?” and following information we have to give the the stakeholders, which were defined in <strong>ask phase</strong></p>
+<ul>
+<li>Identify the differences between these two types of membership</li>
+<li>Examine whether they’re correlation or causation</li>
+<li>Explore why there are those differences</li>
+<li>Predict on what might change if any of the differences changes</li>
+</ul></li>
+<li><p>So first, I will try to build a frame of hypothesis base on the key question, then base on these hypothesis, I will verify if they’re true or not.</p>
+<ul>
+<li>From the business question: “What are the differences between member and casual user?”, I have came up with some hypothesis:
+<ul>
+<li>H1: Members show peak riding activity during early morning and late afternoon hours, with a higher proportion of round trips compared to casual riders.</li>
+<li>H2: Member riders have shorter trip duration and stronger weekday peak-hour patterns than casual riders.</li>
+</ul></li>
+<li>Then, base on unusual point that I have noted, I think that:
+<ul>
+<li>H3: Membership adoption increases with age but plateaus among middle-aged and older users (2019 data only).</li>
+<li>H4: Trip duration distributions differ significantly between casual riders and members, with casual riders exhibiting heavier tails and greater variability.</li>
+</ul></li>
+<li>Base on contrast about the group, I will put some more hypothesis like:
+<ul>
+<li>H5: Members ride disproportionately more on weekdays compared to casual riders.</li>
+</ul></li>
+<li>Base on behavior logic
+<ul>
+<li>H6: Member rides are more concentrated on a smaller set of routes compared to casual rides.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="hypothesis-validation" class="level2">
+<h2 class="anchored" data-anchor-id="hypothesis-validation">Hypothesis Validation</h2>
+<p>I then use kind of method to check if these hypothesis are true or not.</p>
+<section id="h1-members-show-peak-riding-activity-during-early-morning-and-late-afternoon-hours-with-a-higher-proportion-of-round-trips-compared-to-casual-riders." class="level3">
+<h3 class="anchored" data-anchor-id="h1-members-show-peak-riding-activity-during-early-morning-and-late-afternoon-hours-with-a-higher-proportion-of-round-trips-compared-to-casual-riders.">H1: Members show peak riding activity during early morning and late afternoon hours, with a higher proportion of round trips compared to casual riders.</h3>
+<p>Break down the hypothesis. We can see two sub-hypothesis: * H1a: Members show peak riding activity during early morning and late afternoon hours * H1b: Members show higher proportion of round trips compared to casual riders.</p>
+<p>Lets dive in to the first part.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Full-Report_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>As we can see, two tables has the same shape in graphs. There are two timelines when a surge in usage is observed the most: 8 AM and 5 PM.</p>
+<p>Hourly trip counts were normalized by the maximum hour. A clear break point was observed around 35.55% of the maximum, where the relative differences between adjacent hours dropped below 2%. Therefore, peak hours were defined as hours with at least 35.55% of the maximum trip count.</p>
+<ul>
+<li>2019 data:</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>peak hour member percentage:  62.33 % </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>peak hour casual percentage:  49.11 % </code></pre>
+</div>
+</div>
+<ul>
+<li>2020 data:</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>peak hour member percentage:  61.15 % </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>peak hour casual percentage:  45.03 % </code></pre>
+</div>
+</div>
+<p>When looking at the result of 2019 data, 62.26% of member riders ride in peak hour, compare to 47.56% casual riders. These two number aren’t even changed much with full data with its tail. To be more specifically, 62.22% of member riders ride in peak hour and 46.73% for casual riders. The same thing also happens to 2020 data with 61.18% and 46.74% for member riders and casual riders one by one in trimmed data and 61.15% and 45.03% for full data.</p>
+<p>While peak-hour concentration highlights differences in intra-day riding patterns between member and casual users, peak hours alone do not distinguish between weekday- and weekend-driven usage. To further examine whether peak-hour riding reflects structured, schedule-driven behavior, the analysis was extended to compare weekday and weekend distributions across user types.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Full-Report_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Through observation, I spotted that the weekends recorded trends which are different from week day.</p>
+<p><code>weekend are saturday and sunday while weekday are the other days in the week</code></p>
+<p>On weekdays, member riders exhibit a pronounced biomodal distribution with clear peaks during early morning and late afternoon hours, consistent with commuting patterns. In contrast, weekend riding shows a flatter temporal distribution for both user types, suggesting leisure-oriented usage rather than work-related travel.</p>
+<p>2019 data:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 4
+# Groups:   user_type [2]
+  user_type is_weekend      n   pct
+  &lt;chr&gt;     &lt;lgl&gt;       &lt;int&gt; &lt;dbl&gt;
+1 casual    FALSE        3637  61.3
+2 casual    TRUE         2297  38.7
+3 member    FALSE      286373  84.4
+4 member    TRUE        53050  15.6</code></pre>
+</div>
+</div>
+<p>2020 data:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 4
+# Groups:   user_type [2]
+  user_type is_weekend      n   pct
+  &lt;chr&gt;     &lt;lgl&gt;       &lt;int&gt; &lt;dbl&gt;
+1 casual    FALSE       25904  53.7
+2 casual    TRUE        22366  46.3
+3 member    FALSE      312339  82.5
+4 member    TRUE        66068  17.5</code></pre>
+</div>
+</div>
+<p>While weekday usage among members remains relatively consistent across both years, casual riders exhibit greater year-over-year variability. This suggests that casual usage may be more sensitive to external factors, whereas member riding patterns appear more routine and stable.</p>
+<p>Then, I will use IQR and Median to validate whether the above conclusion is true or not</p>
+<ul>
+<li>2019 duration outlier data:</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+  user_type  total outliers   pct
+  &lt;chr&gt;      &lt;int&gt;    &lt;int&gt; &lt;dbl&gt;
+1 casual      2914      246  8.44
+2 member    211561    11990  5.67</code></pre>
+</div>
+</div>
+<ul>
+<li>2020 duration outlier data:</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+  user_type  total outliers   pct
+  &lt;chr&gt;      &lt;int&gt;    &lt;int&gt; &lt;dbl&gt;
+1 casual     21735     1905  8.76
+2 member    231396    13277  5.74</code></pre>
+</div>
+</div>
+<p>After checking the IQR, I’ve noticed that there are 8.44% data of casual rider duration out of the bound, which mean 8% outliers. This number for member riders are 5.66%. These numbers are very noticable. In 2020 data, the numbers are very similar (8.76% for casual riders and 5.73% for member riders). This means that the outlier represent a clear behavior of the users and need to dive deep in see more insights.</p>
+<p>I then check the positions of their own tail to see whether the tails represent for the similar behavior.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Full-Report_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 6
+  user_type  total outlier_left outlier_right pct_left pct_right
+  &lt;chr&gt;      &lt;int&gt;        &lt;int&gt;         &lt;int&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+1 casual      2914            0           246        0      8.44
+2 member    211561            0         11990        0      5.67</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Full-Report_files/figure-html/unnamed-chunk-23-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 6
+  user_type  total outlier_left outlier_right pct_left pct_right
+  &lt;chr&gt;      &lt;int&gt;        &lt;int&gt;         &lt;int&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+1 casual     21735            0          1905        0      8.76
+2 member    231396            0         13277        0      5.74</code></pre>
+</div>
+</div>
+<p>Both of the data show that its own tails is on the right side which mean the tails show a systematric pattern and need to be validated. I decided to check with non peak data to see whether they have the same tail or not.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Full-Report_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 6
+  user_type  total outlier_left outlier_right pct_left pct_right
+  &lt;chr&gt;      &lt;int&gt;        &lt;int&gt;         &lt;int&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+1 casual      3020            0           273        0      9.04
+2 member    127862            0          8350        0      6.53</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Full-Report_files/figure-html/unnamed-chunk-24-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 6
+  user_type  total outlier_left outlier_right pct_left pct_right
+  &lt;chr&gt;      &lt;int&gt;        &lt;int&gt;         &lt;int&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+1 casual     26535            0          2492        0      9.39
+2 member    147011            0          9307        0      6.33</code></pre>
+</div>
+</div>
+<p>After checking, I have noticed that non-peak riders also create tails in duration histogram. The tails in 2019 dang 2020 data is quite the same. Compare to peak data is also in the same position. This reveals that the tails represent a real usage behavior.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>IQR 2019 peak hour data: </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 7
+  user_type    q1   med    q3   iqr  lower upper
+  &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
+1 casual      677  1301 2276. 1599. -1722. 4675.
+2 member      296   468  771.  475.  -416. 1483.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>IQR 2020 peak hour data: </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 7
+  user_type    q1   med    q3   iqr  lower upper
+  &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
+1 casual      617  1286 2302. 1686. -1911. 4831.
+2 member      299   487  828   529   -494. 1622.</code></pre>
+</div>
+</div>
+<p>IQR validation indicates that extreme trip durations account for a relatively small and stable proportion of rides for both user groups. The consistency of outlier rates across years suggests that observed temporal patterns are not driven by anomalously long trips.</p>
+<p>Then, I’m going to check the rest of the hypothesis</p>
+<ul>
+<li>H1b: Members show higher proportion of round trips compared to casual riders.</li>
+</ul>
+<p>2019 data:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 4
+# Groups:   user_type [2]
+  user_type round_trip      n pct_round_trip
+  &lt;chr&gt;     &lt;lgl&gt;       &lt;int&gt;          &lt;dbl&gt;
+1 casual    FALSE        5360          90.3 
+2 casual    TRUE          574           9.67
+3 member    FALSE      335519          98.8 
+4 member    TRUE         3904           1.15</code></pre>
+</div>
+</div>
+<p>2020 data:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 4
+# Groups:   user_type [2]
+  user_type round_trip      n pct_round_trip
+  &lt;chr&gt;     &lt;lgl&gt;       &lt;int&gt;          &lt;dbl&gt;
+1 casual    FALSE       38043          78.8 
+2 casual    TRUE        10227          21.2 
+3 member    FALSE      368548          97.4 
+4 member    TRUE         9859           2.61</code></pre>
+</div>
+</div>
+<p>Contrary to the initial hypothesis, members consistently exhibit a very low proportion of round trips compared to casual riders. However, a notable increase in round-trip usage is observed across both user groups from 2019 to 2020, with casual riders showing a substantially larger increase. This trend points to a growing prevalence of recreational riding behaviors over time, particularly among casual users.</p>
+<ul>
+<li><strong>H1 conclusion:</strong> Analysis of trip duration and temporal patterns indicates a clear behavioral difference between member and casual riders.</li>
+</ul>
+<p>Across both 2019 and 2020 datasets, member riders consistently exhibit a higher proportion of trips occurring during defined peak hours (early morning and late afternoon), with rates remaining stable at approximately 61–62%. In contrast, casual riders show a lower and more volatile peak-hour riding rate, declining from approximately 49% in 2019 to 45% in 2020.</p>
+<p>This temporal concentration suggests that member riders’ usage patterns are more time-constrained and structured, while casual riders’ usage appears more flexible.</p>
+<p>Regarding trip type, casual riders demonstrate a substantially higher proportion of round trips compared to members in both years. Although the round-trip rate increased for both groups from 2019 to 2020, member riders’ round-trip usage remains consistently low (1–2%), whereas casual riders’ rates are significantly higher (10–20%).</p>
+<p>Overall, the hypothesis is partially supported: while member riders do show stronger peak-hour activity, the assumption that they perform a higher proportion of round trips is not supported by the data.</p>
+</section>
+<section id="h2-member-riders-tend-to-have-shorter-and-more-consistent-trip-durations-than-casual-riders." class="level3">
+<h3 class="anchored" data-anchor-id="h2-member-riders-tend-to-have-shorter-and-more-consistent-trip-durations-than-casual-riders.">H2: Member riders tend to have shorter and more consistent trip durations than casual riders.</h3>
+<p>First, take a look at some statistic index to get a general conclusion of the data.</p>
+<ul>
+<li>2019 data:</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 7
+  user_type    q1   med    q3   iqr  lower upper
+  &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
+1 casual      613  1201 2080. 1467. -1587. 4280.
+2 member      317   500  800   483   -408. 1524.</code></pre>
+</div>
+</div>
+<ul>
+<li>2020 data:</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 7
+  user_type    q1   med    q3   iqr  lower upper
+  &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
+1 casual      640  1277  2243  1603 -1764. 4648.
+2 member      318   515   844   526  -471  1633 </code></pre>
+</div>
+</div>
+<ul>
+<li><strong>H2 Conclusion</strong> Member riders show shorter and more consistent trip duration, proved by clearly low median with shorter interquartile ranges compare to casual riders. For more detail:
+<ul>
+<li>Median duration of member riders is 500 seconds in 2019 and 515 in 2020, compare to 1201 in 2019 and 1277 in 2020 of casual riders.</li>
+<li>The IQR of member riders in 2019 and 2020 is 483 and 526, while this index for casual riders is 1466 in 2019 and 1603 in 2020.</li>
+</ul></li>
+</ul>
+</section>
+<section id="h3-membership-adoption-increases-with-age-but-plateaus-among-middle-aged-and-older-users-2019-data-only." class="level3">
+<h3 class="anchored" data-anchor-id="h3-membership-adoption-increases-with-age-but-plateaus-among-middle-aged-and-older-users-2019-data-only.">H3: Membership adoption increases with age but plateaus among middle-aged and older users (2019 data only).</h3>
+<p><code>Due to data availibility, the hypothesis is conducted using 2019 data only. This hypothesis try to explore whether membership status is associated with the age different between riders.</code></p>
+<ul>
+<li>First, we’ll take a look at the distribution of trips base on age group. The groups are divided by popular method for demographic research:</li>
+<li>18–24: Young adults</li>
+<li>25–34: Early working age</li>
+<li>35–44: Mid-career</li>
+<li>45–54: Late-career</li>
+<li>55+: Older riders</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Full-Report_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Looking at the portion graph, we can see that the portion of member riders increase across older age group. This suggest that membership plan may be more appealing to people with more stable and predictable usage pattern, which tend to be more prevalent across older age group.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 8
+  age_group    q1   med    q3   iqr  lower upper outlier_pct
+  &lt;fct&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;       &lt;dbl&gt;
+1 [0,18)     341    555 1566  1225  -1496. 3404.        7.41
+2 [18,25)    279.   461  814   535.  -523. 1616.        7.90
+3 [25,35)    313    501  820   507   -448. 1580.        5.99
+4 [35,45)    324    509  810   486   -405  1539         6.43
+5 [45,55)    334    527  822   488   -398  1554         5.72
+6 [55,65)    346    514  775   429   -298. 1418.        6.41
+7 [65,120)   317    471  782.  464.  -380. 1478.        5.88</code></pre>
+</div>
+</div>
+<ul>
+<li><strong>H3a Conclusion</strong> Through the IQR between age group, older member riders exhibit more consistent trip behavior with narrower interquartile range and lower outlier percentage. However, the outlier percentage appear so stable among every age group shows that extreme trip durations represent a recurring usage pattern rather than random anomalies.</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 4
+# Groups:   age_group [7]
+  age_group user_type      n   pct
+  &lt;fct&gt;     &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt;
+1 [0,18)    member        58  71.6
+2 [18,25)   member     18435  91.2
+3 [25,35)   member    154060  98.1
+4 [35,45)   member     84258  99.1
+5 [45,55)   member     46397  99.4
+6 [55,65)   member     29800  99.6
+7 [65,120)  member      6415  99.8</code></pre>
+</div>
+</div>
+<ul>
+<li><strong>H3b Conclusion</strong> Other age group has the conversion rate of about 1%. However, the conversion change strongest in the youngsters group. In short, membership adoption increases sharply from younger age groups and stabilizes at older ages. This means that older users are inclined to subscribed are already converted. Other age group has the conversion rate of about 1%. However, the conversion change strongest in the youngsters group. In short, membership adoption increases sharply from younger age groups and stabilizes at older ages. This means that older users are mostly converted and so, it leaves no room for member growth in this group of users.</li>
+</ul>
+<p>However, these conclusions are constrained by the limited availability of data and the lack of key demographic variables (e.g., income), which may affect the robustness of the analysis.</p>
+</section>
+<section id="h4-trip-duration-distributions-differ-significantly-between-casual-riders-and-members-with-casual-riders-exhibiting-heavier-tails-and-greater-variability." class="level3">
+<h3 class="anchored" data-anchor-id="h4-trip-duration-distributions-differ-significantly-between-casual-riders-and-members-with-casual-riders-exhibiting-heavier-tails-and-greater-variability.">H4: Trip duration distributions differ significantly between casual riders and members, with casual riders exhibiting heavier tails and greater variability.</h3>
+<p>To validate this hypothesis, several robust statistical index are applied.</p>
+<ul>
+<li>IQR status 2019</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 7
+  user_type    q1   med    q3   iqr  lower upper
+  &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
+1 casual      613  1201 2080. 1467. -1587. 4280.
+2 member      317   500  800   483   -408. 1524.</code></pre>
+</div>
+</div>
+<ul>
+<li>IQR status 2020</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 7
+  user_type    q1   med    q3   iqr  lower upper
+  &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
+1 casual      640  1277  2243  1603 -1764. 4648.
+2 member      318   515   844   526  -471  1633 </code></pre>
+</div>
+</div>
+<p>Validation of H4 is conducted using median, interquartile range (IQR), and IQR-based outlier proportions due to the skewed distribution of trip duration. Casual riders exhibit both higher median trip duration and wider IQR, indicating greater variability compared to members.</p>
+<ul>
+<li>Percent outlier 2019</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+  user_type  total outliers   pct
+  &lt;chr&gt;      &lt;int&gt;    &lt;int&gt; &lt;dbl&gt;
+1 casual      2914      246  8.44
+2 member    211561    11990  5.67</code></pre>
+</div>
+</div>
+<ul>
+<li>Percent outlier 2020</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+  user_type  total outliers   pct
+  &lt;chr&gt;      &lt;int&gt;    &lt;int&gt; &lt;dbl&gt;
+1 casual     21735     1905  8.76
+2 member    231396    13277  5.74</code></pre>
+</div>
+</div>
+<p>Additionally, casual riders show heavier distribution tails, reflected by a higher proportion of extreme trip durations. These results confirm that trip duration distributions differ meaningfully between casual riders and members.</p>
+<ul>
+<li><strong>H4 Conclusion:</strong> H4 is supported. Casual riders demonstrate more heterogeneous usage patterns with longer and more extreme trips, whereas member riders show more consistent trip behavior.</li>
+</ul>
+</section>
+<section id="h5-members-ride-disproportionately-more-on-weekdays-compared-to-casual-riders." class="level3">
+<h3 class="anchored" data-anchor-id="h5-members-ride-disproportionately-more-on-weekdays-compared-to-casual-riders.">H5: Members ride disproportionately more on weekdays compared to casual riders.</h3>
+<p>2019 data trend</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Full-Report_files/figure-html/unnamed-chunk-38-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Two charts above are the trip count during weekday in 2019 and 2020. As observed, the behavior of weekdays and weekend are extremely different from each other.</p>
+<ul>
+<li>2019 data</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+# Groups:   user_type [2]
+  is_weekend user_type     n   pct
+  &lt;lgl&gt;      &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt;
+1 TRUE       casual     2297  38.7
+2 TRUE       member    53050  15.6</code></pre>
+</div>
+</div>
+<ul>
+<li>2020 data</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+# Groups:   user_type [2]
+  is_weekend user_type     n   pct
+  &lt;lgl&gt;      &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt;
+1 TRUE       casual    22366  46.3
+2 TRUE       member    66068  17.5</code></pre>
+</div>
+</div>
+<ul>
+<li><strong>H5 Conclusion:</strong> Across both 2019 and 2020, members consistently concentrate the majority of their rides on weekdays, with only 15–17% of trips occurring on weekends. In contrast, casual riders exhibit a substantially higher weekend share (38% in 2019 and 46% in 2020), indicating a preference for non-routine usage. The persistent gap and its stability over time suggest a fundamental behavioral difference between the two user groups rather than a year-specific fluctuation.</li>
+</ul>
+</section>
+<section id="h6-member-rides-are-more-concentrated-on-a-smaller-set-of-routes-compared-to-casual-rides." class="level3">
+<h3 class="anchored" data-anchor-id="h6-member-rides-are-more-concentrated-on-a-smaller-set-of-routes-compared-to-casual-rides.">H6: Member rides are more concentrated on a smaller set of routes compared to casual rides.</h3>
+<ul>
+<li>First, looking at 2019 data:</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Full-Report_files/figure-html/unnamed-chunk-41-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Based on the 2019 data, the distribution of route-level trip share for member riders is more left-skewed compared to casual riders. Most routes account for a very small percentage of total member trips, while a small number of routes capture a disproportionately large share. In contrast, casual riders exhibit a less skewed distribution, indicating a more even spread of trips across different routes.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 6
+  user_type      med       q1      q3     iqr max_route
+  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;
+1 member    0.000589 0.000295 0.00206 0.00177     0.151
+2 casual    0.0169   0.0169   0.0337  0.0169      1.33 </code></pre>
+</div>
+</div>
+<ul>
+<li><strong>H6: Conclusion:</strong> The IQR-based validation further confirms the difference in route usage patterns between member and casual riders. Member routes exhibit a substantially lower median route-level trip share and a much narrower interquartile range compared to casual riders. This indicates that most routes account for only a minimal proportion of member trips, with usage concentrated on a limited subset of routes. In contrast, casual riders show a wider spread of route-level trip shares, reflecting more diverse route usage. While casual riders have a higher maximum route share, the overall distribution remains more dispersed, as reflected by a higher median and wider interquartile range. This suggests that extreme routes do not dominate casual usage in the same systematic way as for members.</li>
+</ul>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Across both 2019 and 2020, member and casual riders exhibit fundamentally different usage behaviors, reflecting two distinct use cases of the bike-sharing service.</p>
+<ul>
+<li>Member riders behave as routine, utilitarian users. Their trips are shorter, more consistent, and highly time-structured. Members concentrate the majority of their rides during weekday peak hours (early morning and late afternoon), with stable peak-hour participation around 61–62% across years. Weekend usage remains low (15–17%), and round trips are rare (1–2%). Route usage is also concentrated, with most member trips occurring on a limited subset of routes.</li>
+</ul>
+<p><code>This pattern strongly suggests commuting-oriented behavior, where bikes function as part of a daily transportation routine.</code></p>
+<ul>
+<li><p>Casual riders, by contrast, behave as flexible, leisure-oriented users. They exhibit longer and more variable trip durations, wider interquartile ranges, and more extreme values. Casual riders are less tied to peak commuting hours, show a much higher share of weekend usage (38–46%), and perform significantly more round trips (10–20%). Their route usage is more dispersed, indicating exploratory or recreational riding rather than repeated, fixed routes. <code>This reflects non-routine, experience-driven usage, such as tourism, leisure, or occasional errands.</code></p></li>
+<li><p>Demographic analysis further reinforces this segmentation. Older member riders display more stable trip behavior, while conversion to membership increases sharply among younger users and plateaus at older ages, indicating that most older users who are willing to subscribe have already done so. This implies that future membership growth potential lies primarily in younger casual riders, rather than older cohorts.</p></li>
+</ul>
+<p>In summary, the distinction between member and casual riders is not merely one of frequency, but of intent and lifestyle:</p>
+<ul>
+<li>Members use the service as reliable urban infrastructure.</li>
+<li>Casual riders use it as a flexible, discretionary mobility option.</li>
+</ul>
+<p>These conclusions are directionally strong and consistent across years, though they remain constrained by limited demographic data (e.g., income, employment), which may further explain underlying motivations.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
