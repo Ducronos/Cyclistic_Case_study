@@ -12,7 +12,7 @@ output-file: index.html
 The company want to increase the amount of casual riders who buy the membership. Firstly, they want to know what the differences between casual riders and annual ones. I have to check for these things:
 
 * Identify the differences between theese two types of membership
-* Examine wether they're correlations or causations
+* Examine whether they're correlations or causations
 * Explore why there are those differences
 * Predict on what might change if any of the differences changes
 

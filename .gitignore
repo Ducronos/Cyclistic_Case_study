@@ -1,0 +1,11 @@
+# Power BI
+*.pbix
+
+# Quarto / R outputs
+*_files/
+*.html
+
+# Data / artifacts
+*.csv
+*.xlsx
+*.png
