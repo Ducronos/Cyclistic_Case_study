@@ -1013,14 +1013,14 @@ trip_2020 %>%
 
 ```{r, echo = FALSE, }
 #Check for distribution of user_type per route
-member_route <- trip_2019 %>% 
+member_route_2019 <- trip_2019 %>% 
   filter(user_type == "member") %>% 
   count(route_id) %>% 
   mutate(
     pct = n/sum(n)*100
   )
 
-casual_route <- trip_2019 %>% 
+casual_route_2019 <- trip_2019 %>% 
   filter(user_type == "casual") %>% 
   count(route_id) %>% 
   mutate(
@@ -1061,7 +1061,7 @@ p1/p2
 
 ```{r, echo = FALSE, }
 #Validate IQR index
-iqr_route_casual <- casual_route %>% 
+iqr_route_casual_2019 <- casual_route_2019 %>% 
   summarize(
     user_type = "casual",
     med = median(pct),
@@ -1071,7 +1071,7 @@ iqr_route_casual <- casual_route %>%
     max_route = max(pct)
   )
 
-iqr_route_member <- member_route %>% 
+iqr_route_member_2019 <- member_route_2019 %>% 
   summarize(
     user_type = "member",
     med = median(pct),
@@ -1087,6 +1087,87 @@ iqr_route_2019 <- bind_rows(
 )
 
 iqr_route_2019
+```
+
+ The IQR-based validation further confirms the difference in route usage patterns between member and casual riders. Member routes exhibit a substantially lower median route-level trip share and a much narrower interquartile range compared to casual riders. This indicates that most routes account for only a minimal proportion of member trips, with usage concentrated on a limited subset of routes. In contrast, casual riders show a wider spread of route-level trip shares, reflecting more diverse route usage.
+ 
+* **2020 data**
+
+```{r, echo = FALSE, }
+#Check for distribution of user_type per route
+member_route_2020 <- trip_2020 %>% 
+  filter(user_type == "member") %>% 
+  count(route_id) %>% 
+  mutate(
+    pct = n/sum(n)*100
+  )
+
+casual_route_2020 <- trip_2020 %>% 
+  filter(user_type == "casual") %>% 
+  count(route_id) %>% 
+  mutate(
+    pct = n/sum(n)*100
+  )
+
+p1 <- ggplot() +
+  geom_histogram(
+    data = member_route,
+    aes(x = pct),
+    alpha = 0.6,
+    bins = 50,
+  ) + 
+  labs(
+    title = "Distribution of member route portion",
+    x = "Percentage of trips per route (%)",
+    y = "Number of routes"
+  )
+
+p2 <- ggplot() +
+  geom_histogram(
+    data = casual_route,
+    aes(x = pct),
+    alpha = 0.6,
+    bins = 50,
+  ) +
+    labs(
+    title = "Distribution of casual route portion",
+    x = "Percentage of trips per route (%)",
+    y = "Number of routes"
+  )
+
+p1/p2
+```
+  2020 data shows the same shape of the graph with high concentration of the data on the left compare to 2019 data, especially with casual riders shape.
+
+
+```{r, echo = FALSE, }
+#Validate IQR index
+iqr_route_casual_2020 <- casual_route_2020 %>% 
+  summarize(
+    user_type = "casual",
+    med = median(pct),
+    q1 = quantile(pct, 0.25, na.rm = 0),
+    q3 = quantile(pct, 0.75, na.rm = 0),
+    iqr = q3 - q1,
+    max_route = max(pct)
+  )
+
+iqr_route_member_2020 <- member_route_2020 %>% 
+  summarize(
+    user_type = "member",
+    med = median(pct),
+    q1 = quantile(pct, 0.25, na.rm = 0),
+    q3 = quantile(pct, 0.75, na.rm = 0),
+    iqr = q3 - q1,
+    max_route = max(pct)
+  )
+
+iqr_route_2020 <- bind_rows(
+  iqr_route_member,
+  iqr_route_casual
+)
+
+iqr_route_2020
 ```
 
 * **H6: Conclusion:** The IQR-based validation further confirms the difference in route usage patterns between member and casual riders. Member routes exhibit a substantially lower median route-level trip share and a much narrower interquartile range compared to casual riders. This indicates that most routes account for only a minimal proportion of member trips, with usage concentrated on a limited subset of routes. In contrast, casual riders show a wider spread of route-level trip shares, reflecting more diverse route usage.
