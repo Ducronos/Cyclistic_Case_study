@@ -4,6 +4,8 @@ Author: Minh Duc
 
 Publish: 8 Jan 2026
 
+Full process at [Process Report](https://ducronos.github.io/Cyclistic_Case_study/)
+
 ##
 
 ![BI Dashboard](/BI%20Dashboard-1.png)
