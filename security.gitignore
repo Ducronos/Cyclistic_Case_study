@@ -1,9 +1,0 @@
-# Power BI
-*.pbix
-
-# Quarto / R outputs
-*_files/
-*.html
-
-# Images (optional – giữ nếu chỉ để minh họa)
-*.png
