@@ -1,7 +1,7 @@
 # **CYCLIST CASE STUDY ANALYSIS REPORT**
 
 Author: Minh Duc
- 
+
 Publish: 8 Jan 2026
 
 ##
@@ -10,7 +10,7 @@ Publish: 8 Jan 2026
 
 ## Introduction
 
-**Cyclistic:** 
+**Cyclistic:**
 A fictional company which provide bike-shared service. The Marketing Diretor define the company's success is tied along with the number of annual memberships. Therefore, I and my team want to understand how casual riders and annual memberships use company's service differently. From these insights, our team will design a new marketing strategy to convert casual riders to annual members.
 
 **Required Tasks:**
@@ -20,17 +20,18 @@ A fictional company which provide bike-shared service. The Marketing Diretor def
 * Seeing the differences between casual riders and annual members might reveal the reason between customer's decisions, or the changes in their mind. So that the company can plan for campaigns which will bring more customers with the same conditions or encourage currently customers and transform them to potential customers who are ready to buy memberships.
 
 **Data:**
+
 * Name: Cyclistic Bike-Share
 * Provider: Cyclistic Co.ltd
 * Description: The dataset contain records of individual trips made my customers in Quarter 1, 2019 and Quarter 1, 2020. Each record contains information about identities of related objects, information of the trip such as trip duration, station's name and side information of the customers
 
 * Time period: 2 tables with each table contains the records of 1 year Quarter in 2019 and 2020
-* Key variables: 
+* Key variables:
   * trip_id, ride_id: unique key for each record
   * bike_id, from_station_id, to_station_id: unique identity for bikes and stations
   * start_station_name, end_station_name: station where each trip starts and ends
   * tripduration: duration of the trips in seconds
-* Limitation and note: 
+* Limitation and note:
   * The dataset mostly includes data of the trip rather than demographic data of the customers.
   * Minor of the trips have too short or too long duration, or invalid start time and end time, the age of some of the customers are too great
   * The data credibility is rely on the accuracy of the sensors and available stored information of the users.
@@ -83,7 +84,9 @@ These findings highlight that membership status is strongly associated with pred
 ## Appendix
 
 ### Cumulative Trip Percentage
+
 The cumulative trip percentage shows how quickly total trips are accumulated as routes are ranked by usage frequency.
 
 ### Trip duration IQR by Age group (statistic in seconds)
-![](/IQR%20Duration%20by%20Age%20Group%20.png)
+
+![IQR Info](/IQR%20Duration%20by%20Age%20Group%20.png)
